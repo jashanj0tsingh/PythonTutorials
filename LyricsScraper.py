@@ -21,7 +21,7 @@ while(True): # Reach the bottom of the page.
     time.sleep(3)
 
 pattern = re.compile("[\S]+-lyrics$") # Filter http links that end with "lyrics".
-pattern2 = re.compile("\[(.*?)\]") # Remove unnecessary [Intro], [Chorus] etc..
+pattern2 = re.compile("\[(.*?)\]") # Remove unnecessary text from the lyrics such as [Intro], [Chorus] etc..
 
 
 for link in soup.find_all('a',href=True):
