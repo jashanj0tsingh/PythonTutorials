@@ -6,7 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
-mybrowser = webdriver.Chrome("E:\chromedriver.exe") # Browser and path to Web driver you wish to automate your tests cases.
+mybrowser = webdriver.Chrome("path\to\chromedriver\binary") # Browser and path to Web driver you wish to automate your tests cases.
 
 user_input = input("Enter Artist Name = ").replace(" ","+") # User_Input = Artist Name
 base_url = "https://genius.com/search?q="+user_input # Append User_Input to search query
