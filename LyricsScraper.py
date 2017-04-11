@@ -29,7 +29,8 @@ with codecs.open('lyrics.txt','a','utf-8-sig') as myfile:
             if pattern.match(link['href']):
                 f = requests.get(link['href'])
                 lyricsoup = BeautifulSoup(f.content,"html.parser")
-                lyrics = lyricsoup.find("lyrics").get_text().replace("\n","")
+                #lyrics = lyricsoup.find("lyrics").get_text().replace("\n","") # Each song in one line.
+                lyrics = lyricsoup.find("lyrics").get_text() # Line by Line
                 lyrics = re.sub(pattern2, "", lyrics)
                 myfile.write(lyrics+"\n")
 mybrowser.close()
